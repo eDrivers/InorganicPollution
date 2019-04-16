@@ -36,13 +36,6 @@ vignettes/*.pdf
 rsconnect/
 
 # Files to ignore
-# Raw data
-Data/RawData/inorganic.tif
-Data/RawData/inorganic.tif.aux.xml
-Data/RawData/inorganic.tif.ovr
-Data/RawData/inorgStL.RData
-Data/RawData/inorganicPollution.RData
-Data/RawData/raw_2013_inorganic_mol.zip
 
 #iOS file
 .DS_Store
