@@ -41,13 +41,3 @@ inorg <- inorg[id0, ]
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Export object as .RData
 save(inorg, file = './data/rawData/inorganicPollution.RData')
-
-
-
-
-
-
-
-# Export new raw data file
-inorgpolHalpern <- inorg
-save(inorgpolHalpern, file = './data/formatData/inorgpolHalpern.RData')
