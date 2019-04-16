@@ -42,7 +42,7 @@ system(noquote(wgetString), intern = T)
 fileName <- dir(output, pattern = '.zip')
 
 # Unzip kmz file
-unzip(zipfile = paste0(output, fileName),
+unzip(zipfile = paste0(output, '/', fileName),
       exdir = output)
 
 # Identify newly extracted files
