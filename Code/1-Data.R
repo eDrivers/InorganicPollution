@@ -70,9 +70,31 @@ inorg <- crop(inorg, ext)
 # Copy raster values to memory to that export is done properly
 values(inorg) <- values(inorg)
 
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#                                    FORMAT DATA
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Modify projection
+# We use the Lambert projection as a default, which allows us to work in meters
+# rather than in degrees
+prj <- st_crs(32198)$proj4string
+inorg <- projectRaster(inorg, crs = prj)
+
+# We also work with polygons rather than rasters, so we need to transform raster
+# cells to polygons. Data could be left as rasters, but we elected to work with
+# a hexagonal grid and so have decided to convert everything in polygons.
+# Transform raster to polygon
+inorg <- rasterToPolygons(inorg)
+
+# Transform to sf object
+inorg <- st_as_sf(inorg)
+
+# Select only features with values > 0
+id0 <- inorg$inorganic > 0
+inorg <- inorg[id0, ]
+
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #                                  EXPORT DATA
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Export object as .RData
-save(inorg, file = './data/rawData/inorgStL.RData')
+save(inorg, file = './data/rawData/inorganic.RData')
