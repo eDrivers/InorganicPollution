@@ -1,0 +1,26 @@
+title: "Inorganic pollution"
+subtitle: ""
+description: "Inorganic pollution modelled as a function of impervious surface area"
+
+rawData:
+  source: "Halpern, B. S., Frazier, M., Potapenko, J., Casey, K. S., Koenig, K., Longo, C., et al. (2015). Cumulative human impacts: Raw stressor data (2008 and 2013). Knowledge Network for Biocomplexity. doi:10.5063/f1s180fs."
+  contact: "Benjamin Halpern"
+
+dataDescription:
+  units: ""
+  spatialResolution: "Modeled 1 km^2"
+  temporalResolution: "Annual"
+  years: "2000-2001"
+  projection:
+    proj4string: "+proj=lcc +lat_1=60 +lat_2=46 +lat_0=44 +lon_0=-68.5 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+    egsp: "32198"
+  extent:
+    xmin: "-207662.6"
+    ymin: "122578.5"
+    xmax: "1215003"
+    ymax: "1039943"
+
+availability:
+  rawData: "yes"
+  code: "yes"
+  driver: "yes"
